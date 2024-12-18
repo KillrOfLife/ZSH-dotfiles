@@ -87,8 +87,14 @@ alias tmux='echo BAD!'
 EDITOR='nvim'
 #PATH='' 
 
+#kubernetes krew bin directory
 if [ -d "$HOME/.krew" ] ; then
-    PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+  PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
+#pipx bin directory
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Shell integrations
