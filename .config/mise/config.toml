@@ -10,4 +10,7 @@ zoxide = "latest"
 
 [env]
 EMAIL = "mxmclaeys@gmail.com"
+GIT_COMMITTER_NAME = "arcana"
 GIT_COMMITTER_EMAIL = "mxmclaeys@gmail.com"
+GIT_AUTHOR_NAME = "arcana"
+GIT_AUTHOR_EMAIL = "mxmclaeys@gmail.com"
