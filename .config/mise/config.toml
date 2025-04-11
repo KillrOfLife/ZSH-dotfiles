@@ -1,0 +1,13 @@
+[tools]
+neovim = "latest"
+eza = "latest"
+fzf = "latest"
+python = "3.10.16"
+ripgrep = "latest"
+yq = "4.45.1"
+zoxide = "latest"
+
+
+[env]
+EMAIL = "mxmclaeys@gmail.com"
+GIT_COMMITTER_EMAIL = "mxmclaeys@gmail.com"
