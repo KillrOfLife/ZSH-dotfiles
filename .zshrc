@@ -124,9 +124,12 @@ function mise_pin() {
   mise use $1@$(mise latest $1)
 }
 
+alias mise_update='mise upgrade --bump'
+
 # Shell integrations
 if [[ -x "$(command -v fzf)" ]]; then; source <(fzf --zsh); fi
 if [[ -x "$(command -v kubectl)" ]]; then; source <(kubectl completion zsh); fi
 
 eval "$(zoxide init --cmd cd zsh)"
 eval $(thefuck --alias)
+
