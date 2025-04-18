@@ -37,12 +37,16 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# ZSH options
+# setopt correct
+setopt auto_cd
+
 # Completion styling
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# zstyle ':completion:*' menu no
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza $realpath'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza $realpath'
 
 
 #kubernetes krew bin directory
@@ -70,12 +74,20 @@ if [[ -x "$(command -v starship)" ]]; then
   # Initialize starship prompt if it's installed
   eval "$(starship init zsh)"
 else
-  echo "Starship prompt not found. Installing..."
-  curl -sS https://starship.rs/install.sh | sh
-  mkdir -p ~/.config/
-  # starship preset gruvbox-rainbow -o ~/.config/starship.toml
-  # Initialize starship prompt after installation
-  eval "$(starship init zsh)"
+  echo "Starship prompt not found. Please fix mise config."
+  # curl -sS https://starship.rs/install.sh | sh
+fi
+
+# Check if homebrew is already installed
+if [ ! -d "/home/linuxbrew/.linuxbrew/bin" ] ; then
+  echo "Homebrew not found. Installing..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
+fi
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+if [[ ! -x "$(command -v thefuck)" ]]; then
+  echo "thefuck not found. Installing..."
+  brew install thefuck
 fi
 
 # Add in snippets
@@ -98,6 +110,8 @@ zinit light Aloxaf/fzf-tab
 # # Aliases
 alias ls='eza --icons=always'
 alias lss='eza'
+alias grep='rg --color=auto'
+alias cat='bat'
 alias vi='nvim'
 alias vim='nvim'
 alias c='clear'
@@ -115,3 +129,4 @@ if [[ -x "$(command -v fzf)" ]]; then; source <(fzf --zsh); fi
 if [[ -x "$(command -v kubectl)" ]]; then; source <(kubectl completion zsh); fi
 
 eval "$(zoxide init --cmd cd zsh)"
+eval $(thefuck --alias)

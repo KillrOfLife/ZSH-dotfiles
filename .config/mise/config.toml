@@ -1,16 +1,14 @@
 [tools]
-neovim = "latest"
-eza = "latest"
-fzf = "latest"
-python = "3.10.16"
-ripgrep = "latest"
+neovim = "0.11.0"
+eza = "0.21.0"
+fzf = "0.61.1"
+python = "3.13.3"
+ripgrep = "14.1.1"
 yq = "4.45.1"
-zoxide = "latest"
-
-
-[env]
-EMAIL = "mxmclaeys@gmail.com"
-GIT_COMMITTER_NAME = "arcana"
-GIT_COMMITTER_EMAIL = "mxmclaeys@gmail.com"
-GIT_AUTHOR_NAME = "arcana"
-GIT_AUTHOR_EMAIL = "mxmclaeys@gmail.com"
+zoxide = "0.9.7"
+starship = "1.22.1"
+bat = "0.25.0"
+fd = "10.2.0"
+terraform = "1.11.4"
+ansible = "11.4.0"
+packer = "1.12.0"
