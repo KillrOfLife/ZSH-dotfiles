@@ -3,7 +3,7 @@
 format = """
 [](surface0)\
 $os\
-$username\
+$username@$hostname\
 [](bg:peach fg:surface0)\
 $directory\
 [](fg:peach bg:green)\
@@ -19,6 +19,7 @@ $java\
 $kotlin\
 $haskell\
 $python\
+$terraform\
 [](fg:teal bg:blue)\
 $docker_context\
 [](fg:blue bg:lavender)\
@@ -85,7 +86,12 @@ RedHatEnterprise = "󱄛"
 show_always = true
 style_user = "bg:surface0 fg:text"
 style_root = "bg:surface0 fg:text"
-format = '[ $user ]($style)'
+format = '[ $user]($style)'
+
+[hostname]
+format = "[$hostname ]($style)"
+style = "bg:surface0 fg:text"
+
 
 [directory]
 style = "fg:mantle bg:peach"
@@ -151,6 +157,11 @@ format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [python]
 symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[terraform]
+symbol = "󱁢"
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
