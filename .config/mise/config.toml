@@ -16,3 +16,9 @@ lazygit = "0.49.0"
 gdu = "5.30.1"
 bottom = "0.10.2"
 pipx = "1.7.1"
+
+[settings]
+trusted_config_paths = [
+    '~/',
+    '~/dotfiles/ '
+]

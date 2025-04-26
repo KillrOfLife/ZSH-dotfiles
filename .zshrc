@@ -66,6 +66,7 @@ if [[ -x "$(command -v $HOME/.local/bin/mise)" ]]; then
 else
   echo "mise (en place) not found. Installing..."
   curl https://mise.run | sh
+  eval "$($HOME/.local/bin/mise activate zsh)"
   mise doctor && mise install
 fi
 
@@ -78,17 +79,17 @@ else
   # curl -sS https://starship.rs/install.sh | sh
 fi
 
-# Check if homebrew is already installed
-if [ ! -d "/home/linuxbrew/.linuxbrew/bin" ] ; then
-  echo "Homebrew not found. Installing..."
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
-fi
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-if [[ ! -x "$(command -v thefuck)" ]]; then
-  echo "thefuck not found. Installing..."
-  brew install thefuck
-fi
+## Check if homebrew is already installed
+#if [ ! -d "/home/linuxbrew/.linuxbrew/bin" ] ; then
+#  echo "Homebrew not found. Installing..."
+#  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
+#fi
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#
+#if [[ ! -x "$(command -v thefuck)" ]]; then
+#  echo "thefuck not found. Installing..."
+#  brew install thefuck
+#fi
 
 # Add in snippets
 # zinit snippet OMZL::git.zsh
@@ -118,18 +119,19 @@ alias c='clear'
 alias python='python3'
 
 
-EDITOR='nvim'
+EDITOR='$(mise which nvim)'
 
 function mise_pin() {
   mise use $1@$(mise latest $1)
 }
 
 alias mise_update='mise upgrade --bump'
+alias update_fonts='sudo fc-cache -fv'
 
 # Shell integrations
 if [[ -x "$(command -v fzf)" ]]; then; source <(fzf --zsh); fi
 if [[ -x "$(command -v kubectl)" ]]; then; source <(kubectl completion zsh); fi
 
 eval "$(zoxide init --cmd cd zsh)"
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 

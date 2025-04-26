@@ -6,24 +6,35 @@ import = [
 TERM = "xterm-256color"
 
 [font]
-size = 14.0
+#size = 14.0
 
 [font.bold]
-# family = "MesloLGS Nerd Font Mono"
-family = "CaskaydiaCove Nerd Font"
-style = "Bold"
+family = "MesloLGS Nerd Font"
+#style = "Bold"
 
 [font.bold_italic]
-family = "CaskaydiaCove Nerd Font"
-# family = "MesloLGS Nerd Font Mono"
-style = "Bold Italic"
+family = "MesloLGS Nerd Font"
+#style = "Bold Italic"
 
 [font.italic]
-family = "CaskaydiaCove Nerd Font"
-# family = "MesloLGS Nerd Font Mono"
-style = "Italic"
+family = "MesloLGS Nerd Font"
+#style = "Italic"
 
 [font.normal]
-# family = "MesloLGS Nerd Font Mono"
-family = "CaskaydiaCove Nerd Font"
-style = "Regular"
+family = "MesloLGS Nerd Font"
+#style = "Regular"
+
+[font.glyph_offset]
+x=0
+y=0
+
+[font.offset]
+x=0
+y=0
+
+[window]
+decorations = "full"
+
+[window.padding]
+x=2 
+y=2
