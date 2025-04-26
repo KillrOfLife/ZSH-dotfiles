@@ -3,7 +3,9 @@
 format = """
 [](surface0)\
 $os\
-$username@$hostname\
+$username\
+$hostname\
+[ ](bg:surface0)\
 [](bg:peach fg:surface0)\
 $directory\
 [](fg:peach bg:green)\
@@ -89,7 +91,7 @@ style_root = "bg:surface0 fg:text"
 format = '[ $user]($style)'
 
 [hostname]
-format = "[$hostname ]($style)"
+format = "[@$hostname]($style)"
 style = "bg:surface0 fg:text"
 
 

@@ -12,7 +12,9 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 # Load completions
-autoload -Uz _zinit
+autoload -Uz _zinit compinit
+compinit
+#autoload -Uz compinit && compinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Keybindings
@@ -23,7 +25,7 @@ autoload -Uz _zinit
 # bindkey '^[w' kill-region
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-
+ 
 # History
 HISTSIZE=1000000
 HISTFILE="$HOME/.zsh_history"
