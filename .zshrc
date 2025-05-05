@@ -69,7 +69,8 @@ else
   echo "mise (en place) not found. Installing..."
   curl https://mise.run | sh
   eval "$($HOME/.local/bin/mise activate zsh)"
-  mise doctor && mise install
+  mise doctor
+  mise install
 fi
 
 # Check if starship is already installed
