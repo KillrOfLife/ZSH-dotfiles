@@ -45,8 +45,9 @@ fi
 # manually add your oh-my-zsh plugins here
 plugins=(
     "sudo"
-    # "git"                     # (default)
-    # "zsh-autosuggestions"     # (default)
-    # "zsh-syntax-highlighting" # (default)
-    # "zsh-completions"         # (default)
+    "git"                     # (default)
+    "zsh-autosuggestions"     # (default)
+    "zsh-syntax-highlighting" # (default)
+    "zsh-completions"         # (default)
+    "zsh-256color"
 )
