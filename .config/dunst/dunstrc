@@ -120,15 +120,15 @@ dmenu = /run/current-system/sw/bin/rofi -config notification -dmenu -p dunst:
 
 
 [urgency_low]
-    background = "#658FA380"
-    foreground = "#CCEFFFE6"
-    frame_color = "#658FA303"
+    background = "#6587A380"
+    foreground = "#293F52E6"
+    frame_color = "#6587A303"
     icon = "/home/arcana/.local/share/icons/Wallbash-Icon/hyprdots.svg"
     timeout = 5
 
 [urgency_normal]
-    background = "#3A576B80"
-    foreground = "#CCEBFFE6"
-    frame_color = "#3A576B03"
+    background = "#AACBF080"
+    foreground = "#293C52E6"
+    frame_color = "#AACBF003"
     icon = "/home/arcana/.local/share/icons/Wallbash-Icon/hyprdots.svg"
     timeout = 5
