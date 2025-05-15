@@ -61,6 +61,8 @@ if [ -d "$HOME/.local/bin" ] ; then
   PATH="$HOME/.local/bin:$PATH"
 fi
 
+if uname -a | grep -vqi 'nixos'; then
+
 # Check if mise is already installed
 if [[ -x "$(command -v $HOME/.local/bin/mise)" ]]; then
   # Initialize mise 
@@ -71,6 +73,8 @@ else
   eval "$($HOME/.local/bin/mise activate zsh)"
   mise doctor
   mise install
+fi
+
 fi
 
 # Check if starship is already installed
