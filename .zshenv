@@ -1,3 +1,22 @@
+function _load_zsh_plugins {
+    unset -f _load_zsh_plugins
+    # Oh-my-zsh installation path
+    zsh_paths=(
+        "$HOME/.oh-my-zsh"
+        "/usr/local/share/oh-my-zsh"
+        "/usr/share/oh-my-zsh"
+    )
+    for zsh_path in "${zsh_paths[@]}"; do [[ -d $zsh_path ]] && export ZSH=$zsh_path && break; done
+    # Load Plugins
+    hyde_plugins=(git zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
+    plugins+=("${plugins[@]}" "${hyde_plugins[@]}")
+    # Deduplicate plugins
+    plugins=("${plugins[@]}")
+    plugins=($(printf "%s\n" "${plugins[@]}" | sort -u))
+    # Defer oh-my-zsh loading until after prompt appears
+    typeset -g DEFER_OMZ_LOAD=1
+}
+
 function _slow_load_warning {
     local lock_file="/tmp/.hyde_slow_load_warning.lock"
     local load_time=$SECONDS
