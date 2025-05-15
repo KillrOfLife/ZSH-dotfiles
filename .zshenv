@@ -11,8 +11,7 @@ function _load_zsh_plugins {
     hyde_plugins=(git zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
     plugins+=("${plugins[@]}" "${hyde_plugins[@]}")
     # Deduplicate plugins
-    plugins=("${plugins[@]}")
-    plugins=($(printf "%s\n" "${plugins[@]}" | sort -u))
+    plugins=("${(u)plugins[@]}")
     # Defer oh-my-zsh loading until after prompt appears
     typeset -g DEFER_OMZ_LOAD=1
 }
