@@ -31,10 +31,15 @@ y=0
 
 [window]
 decorations = "full"
+opacity = 0.8
 
 [window.padding]
 x=2 
 y=2
+
+#[[mouse_bindings]]
+#mouse = "Right"
+#action = "Paste"
 
 [general]
 import = [
