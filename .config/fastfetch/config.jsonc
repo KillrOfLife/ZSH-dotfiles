@@ -1,0 +1,155 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "/usr/share/ublue-os/bazzite/logo.txt",
+    "color": {
+      "1": "94",
+      "2": "47",
+      "3": "95",
+      "4": "0",
+      "5": "8",
+      "6": "55"
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": "38;2;139;62;165"
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": " ",
+      "format": "   You should be able to fix your own stuff"
+    }, 
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────┐"
+    },
+    {
+      "type": "chassis",
+      "key": "  󰇺 Chassis",
+      "format": "{1} {2} {3}"
+    },
+    {
+      "type": "os",
+      "key": "  󰣇 OS",
+      "format": "{3}"
+      // "keyColor": "red"
+    },
+    {
+      "type": "kernel",
+      "key": "   Kernel",
+      "format": "{2}",
+      "keyColor": "red"
+    },
+    {
+      "type": "packages",
+      "key": "  󰏗 Packages",
+      "keyColor": "red"
+    },
+    {
+      "type": "display",
+      "key": "  󰍹 Display",
+      "format": "{1}x{2} @ {3}Hz [{7}]",
+      "keyColor": "green"
+    },
+    {
+      "type": "terminal",
+      "key": "   Terminal",
+      "keyColor": "green"
+    },
+    {
+      "type": "de",
+      "key": "   DE",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "wm",
+      "key": "  󱗃 WM",
+      "format": "{2} ({3})",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────┘"
+    },
+    "break",
+    {
+      "type": "title",
+      "key": "  ",
+      "format": "{6} {7} {8}"
+    },
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────┐"
+    },
+    {
+      "type": "cpu",
+      "format": "{1} @ {7}",
+      "key": "   CPU",
+      "keyColor": "blue"
+    },
+    {
+      "type": "gpu",
+      "format": "{1} {2}",
+      "key": "  󰊴 GPU",
+      "keyColor": "blue"
+    },
+    {
+      "type": "gpu",
+      "format": "{3}",
+      "key": "   GPU Driver",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "memory",
+      "key": "   Memory ",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "disk",
+      "key": "  󱦟 Disk (/)",
+      "folders": "/",
+      "keyColor": "cyan"
+      // "format": "{days} days"
+    },
+    {
+      "type": "battery",
+      "key": "    Battery ({2})",
+      "keyColor": "cyan"
+    },      
+    // {
+    //   "type": "poweradapter",
+    //   "key": "    ",
+    //   "keyColor": "cyan"
+    // },
+    "poweradapter",
+    // {
+    //   "type": "uptime",
+    //   "key": "  󱫐 Uptime ",
+    //   "keyColor": "red"
+    // },
+    {
+      "type": "shell",
+      "key": "    Shell",
+      "keyColor": "red"
+    },
+    {
+      "type": "localip",
+      "key": "    IP",
+      "keyColor": "red"
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────┘"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 2,
+      "symbol": "circle"
+    },
+    "break"
+  ]
+}
+    
