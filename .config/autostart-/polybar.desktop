@@ -2,5 +2,5 @@
 Type=Application
 Exec=/home/arcana/.config/polybar/launch.sh
 Hidden=false
-X-MATE-Autostart-enabled=true
+X-MATE-Autostart-enabled=false
 Name=Polybar

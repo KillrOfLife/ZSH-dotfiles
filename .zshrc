@@ -10,7 +10,8 @@ fi
 
 # Source/Load zinit
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-
+# TODO add if statement
+source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 # Load completions
 autoload -Uz _zinit compinit
 compinit

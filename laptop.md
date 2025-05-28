@@ -10,7 +10,14 @@ sudo usermod --shell /usr/sbin/zsh arcana
 
 
 gsettings set org.gnome.desktop.wm.preferences workspace-names "['Web', 'Code', 'Term', 'Music']"
-gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
+sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon\
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+
+
+
 ```
 
 install grencode
